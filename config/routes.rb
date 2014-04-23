@@ -1,5 +1,5 @@
 ContactsServer::Application.routes.draw do
-  resources :api_keys, except: [:new, :edit]
-  resources :users, except: [:new, :edit]
+  resources :users, except: [:new, :edit, :destroy]
   resources :contacts, :except => [:edit, :new]
+  post 'session' => 'session#create'
 end
